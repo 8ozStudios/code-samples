@@ -1,0 +1,92 @@
+<?php
+$this->headLink()->appendStylesheet($this->baseUrl() . '/public/styles/common/misc/contentfactory.css');
+$this->headScript()->appendFile($this->baseUrl() . '/public/scripts/common/misc/contentfactory.js');
+?>
+<script>
+    var platformName = '<?php echo $this->communityConfig->communityNameFormal; ?>';
+</script>
+<div id='contentfactory'>
+	<h1>Social Media Content Factory</h1>
+    <h3>To share an item, drag it into the message box and click to share!</h3>
+    <p>Hint: click 'Shorten Link' to convert the full URL to a short URL, this is especially helpful for staying under 144 character when sharing to Twitter.</p>
+	<div class='tri-column'>
+        <div id='share' class=''>
+            <h2>Your message:</h2>
+            <textarea id='message'></textarea>
+            <h2>Link: <span class="shorten">Shorten Link</span></h2>
+            <input type='text' id='link' value=''/>
+            <div id='characterCount'>
+                Twitter character count: <span class="count">0</span>/140
+            </div>
+            <div class='buttonRow'>
+                <button class='share facebook tooltip noicon' title='Share the link on Facebook'>Facebook</button>
+                <button class='share twitter tooltip noicon' title='Share the message and link on Twitter'>Twitter</button>
+                <button class='share googleplus tooltip noicon' title='Share the link on Google+'>Google+</button>
+                <button class='share linkedin tooltip noicon' title='Share the message and the link on LinkedIn'>LinkedIn</button>
+            </div>
+            <div class='note'>
+                Note: Facebook and Google+ will only auto-share your link by default (you must manually type in a message), while Twitter and LinkedIn will auto-share the message as well as the link.
+            </div>
+        </div>
+	</div>
+    <div class='tri-column'>
+        <div id='organizations' class='box'>
+            <h2>Organizations</h2>
+            <ul>
+                <?php foreach($this->organizations1 as $organization){ ?>
+                    <li data-link="<?php echo $this->domain; ?>/communityplatform/<?php echo $_SESSION[ 'dbstate' ]; ?>/organization/profile/id/<?php echo (strlen($organization['id'])>1) ? $organization['id'] : $organization['ein']; ?>" data-title="Look who recently updated their profile on <?php echo $this->communityConfig->communityNameFormal;?>: '<?php echo $organization['name']; ?>'"><?php echo $organization['name']; ?> <span class="preview">Preview</span></li>
+                <?php } ?>
+                <?php foreach($this->organizations2 as $organization){ ?>
+                    <li data-link="<?php echo $this->domain; ?>/communityplatform/<?php echo $_SESSION[ 'dbstate' ]; ?>/directory/profile/id/<?php echo $organization['id']; ?>" data-title="Look who recently updated their profile on <?php echo $this->communityConfig->communityNameFormal;?>: '<?php echo $organization['name']; ?>'"><?php echo $organization['name']; ?> <span class="preview">Preview</span></li>
+                <?php } ?>
+            </ul>
+        </div>
+        <div id='classifieds' class='box'>
+            <h2>Classifieds</h2>
+            <ul>
+                <?php foreach($this->classifieds as $classified){ ?>
+                    <li data-link="<?php echo $this->domain; ?>/communityplatform/<?php echo $_SESSION[ 'dbstate' ]; ?>/classifieds/posting/classifiedsId/<?php echo $classified->id; ?>" data-title="Check out this recently updated Classified listing on <?php echo $this->communityConfig->communityNameFormal;?>: '<?php echo $classified->title; ?>'"><?php echo $classified->displayCreatedDate . ' - ' . $classified->title; ?> <span class="preview">Preview</span></li>
+                <?php } ?>
+            </ul>
+        </div>
+        <div id='events' class='box'>
+            <h2>Events</h2>
+            <ul>
+                <?php foreach($this->events as $event){
+                    $fullTitle = $event['title'];
+                    $title = (strlen($fullTitle) > 24) ? substr( $fullTitle, 0, 24 ).'...' : $fullTitle;
+                    ?>
+                    <li data-title="Check out this upcoming event on <?php echo $this->communityConfig->communityNameFormal;?>: '<?php echo str_replace('"', '', $fullTitle); ?>'" data-link="<?php echo $this->domain; ?>/communityplatform/<?php echo $_SESSION[ 'dbstate' ]; ?>/calendar/sitewide/showevent/<?php echo str_replace('event_', '', $event['id']); ?>"><?php echo date( "D, n/j/y", $event['start']) . ' - ' . $title; ?> <span class="preview">Preview</span></li>
+                <?php } ?>
+            </ul>
+        </div>
+	</div>
+    <div class='tri-column'>
+        <div id='library' class='box'>
+            <h2>Library</h2>
+            <ul>
+                <?php foreach($this->libraryitems as $library){ ?>
+                    <li data-link="<?php echo $this->domain; ?>/PubApps/libraryDetail.php?linkID=<?php echo $library['ID']; ?>" data-title="Check out this recently updated Library item on <?php echo $this->communityConfig->communityNameFormal;?>: '<?php echo str_replace('"', '', $library['Name']); ?>'"><?php echo $library['Name']; ?> <span class="preview">Preview</span></li>
+                <?php } ?>
+            </ul>
+        </div>
+        <div id='suggested' class='box'>
+            <h2>Suggested Content</h2>
+            <ul>
+                <?php foreach($this->suggesteditems as $item){ ?>
+                    <li data-link="<?php echo $this->domain; ?>/PubApps/libraryDetail.php?linkID=<?php echo $item['ID']; ?>" data-title="Now this is interesting: '<?php echo str_replace('"', '', $item['Name']); ?>'"><?php echo $item['Name']; ?> <span class="preview">Preview</span></li>
+                <?php } ?>
+            </ul>
+            <div class="note">
+                Note: This content has been suggested by the CP team and other admins. If you would like to add to 'Suggested Content' (visible to all platform admins), simply add an item to your library with the tag "SMCF_SuggestedContent".
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+

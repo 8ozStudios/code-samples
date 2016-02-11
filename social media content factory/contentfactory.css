@@ -1,0 +1,140 @@
+/*
+    Content Factory Style
+*/
+
+#contentfactory {
+    margin: 25px 4%;
+}
+
+.tri-column {
+    float:left;
+    width: 28%;
+    margin-right: 5%;
+}
+textarea#message, input#link {
+    width: 93%;
+    border: 2px solid #333;
+    margin-bottom: 6px;
+    font-size: 15px;
+    padding: 6px 3%;
+}
+textarea#message {
+    min-height: 150px;
+}
+div#share {
+    padding: 15px 6%;
+    background-color: rgb(219, 235, 247);
+    border-radius: 15px;
+    margin: 15px 0;
+    box-shadow: 2px 2px 15px -5px #333;
+    -moz-box-shadow: 2px 2px 15px -5px #333;
+    -webkit-box-shadow: 2px 2px 15px -5px #333;
+}
+div#share h2 {
+    margin-top: 0;
+    font-size: 17px;
+    margin-bottom: 10px;
+    color: #333;
+}
+button.share.tooltip {
+    border: 0;
+    color: #FFF;
+    font-size: 16px;
+    padding: 10px 1%;
+    cursor: pointer;
+    margin: 0 0 4px 0;
+    width: 49%;
+}
+button.share.facebook {
+    background-color: rgb(35, 85, 192);
+}
+button.share.facebook:hover {
+    background-color: rgb(37, 97, 231);
+}
+button.share.twitter {
+    background-color: rgb(107, 208, 252);
+}
+button.share.twitter:hover {
+    background-color: rgb(153, 220, 252);
+}
+button.share.googleplus {
+    background-color: #D73D32;
+}
+button.share.googleplus:hover {
+    background-color: #fe483b;
+}
+button.share.linkedin {
+    background-color:#1a84bc;
+}
+button.share.linkedin:hover {
+    background-color: #24b1ff;
+}
+.box {
+    margin-bottom:20px;
+}
+.box ul {
+    margin: 0;
+    padding: 0;
+    border: 1px solid #999;
+}
+.box ul li:nth-child(odd) {
+    background-color: #F8F8F8;
+}
+.box ul li {
+    padding: 5px 5px;
+    font-size: 12px;
+    list-style:none;
+    cursor: pointer;
+}
+.box ul li:hover {
+    background-color: #E2EDFA !important;
+}
+.box h2 {
+    font-size: 16px;
+    margin-bottom: 7px;
+}
+input#link {
+    margin-bottom: 20px;
+}
+span.preview {
+    font-size:11px;
+    text-decoration: underline;
+    cursor: pointer;
+    color: #0000d7;
+}
+.shorten {
+    font-size:11px;
+    text-decoration: underline;
+    cursor: pointer;
+    color: #0000d7;
+    float: right;
+    margin-top: 5px;
+}
+.red {
+    color:red;
+}
+div#characterCount {
+    margin: -7px 0 13px;
+    font-style: italic;
+    font-size: 14px;
+}
+.note {
+    margin:10px 0;
+    font-size: 12px;
+    line-height: 16px;
+}
+.ui-draggable-dragging {
+    max-width: 170px;
+    list-style: none;
+    opacity: .7;
+    background-color: #FFF;
+    box-shadow: 2px 2px 9px -5px #000;
+    padding: 4px;
+    font-size: 13px;
+}
+div#share.ui-droppable.ui-state-default {
+    background-image: none;
+}
+div#share.ui-droppable.ui-state-default.ui-state-hover {
+    background-color: #F5D6A5;
+}
