@@ -23,9 +23,12 @@ I've extracted just the controller, view, css and js files for a particular feat
 <b>Reusable Text Blocks - Custom Templates</b><br />
 <b>*{{Some PHP code I am proud of}}*</b><br />
 I took over work on a client's existing Wordpress site that was rather bloated with plugins. Among many others, the site was using a plugin called Reusable Text Blocks - a simple plugin allowing a user to make a 'text block' and display it in multiple places on the site by a shortcode like this:
+
   [text-blocks id="my-text"]
-The plugin also allows custom templates to be built, to modify the display of the block and I used this feature to build out some additional functionality on the site based on the text blocks (specifically trying to avoid using new plugins). 
- - text-blocks-certwindow.php - The client offered classes periodically and wanted to display only the upcoming or current class date range on the site. The problem is that the client did not want to have to remember to log in and change it every time a class ended or risk having outdated information on the site - they wanted to be able to set up the nex few date windows in advance and have the correct one display. Using this template, I enabled them to add the following shortcode to their page, which met their needs:
+  
+The plugin also allows custom templates to be built, to modify the display of the block and I used this feature to build out some additional functionality on the site based on the text blocks. I'm proud of this code because I was able to add some important, customized functionality to help solve a client's problems with a minimal number of lines of code that would not need to be kept up to date in the future (as a plugin would) - as few as 22 lines of php, in one case.
+
+ - text-blocks-certwindow.php - The client offered classes periodically and wanted to display only the upcoming or current class date range on the site. The problem is that the client did not want to have to remember to log in and change it every time a class ended or risk having outdated information on the site - they wanted to be able to set up the nex few date windows in advance and have the correct one display. Using this template, I enabled them to add the following shortcode to their page:
  
    [text-blocks
       id="certification-window-date-range"
@@ -40,16 +43,16 @@ The plugin also allows custom templates to be built, to modify the display of th
       q4end="April 3, 2016"
       defaultmessage="Sorry, window test dates are unavailable"]
 
- This custom template allows the user to add the next four upcoming date ranges (start and end date for each), as well as a default message to show if they forget to update them by the time the last date range ends. This saved them a lot of time and worry. 
+ This custom template allows the user to add the next four date ranges (start and end date for each, in a human readable format), as well as a default message to show if the last date range ends. This saved them a lot of time and worry. 
  
- - text-blocks-eventfilter.php - Similar to above, the client wanted to be able to display an upcoming event of a certain type and have the event disappear after it occurs and show the next one. Previously they were doing this by hand and frequently forgetting to keep the site up to date. This template allows the user to set the type of event (matching 2 different post type taxonomies) and also the number of upcoming events to show. The shortcode looked like this:
+ - text-blocks-eventfilter.php - Similar to above, the client wanted to be able to display an upcoming event (custom post type) of a certain type and have the event disappear after it occurs and show the next one. Previously they were doing this by hand and frequently forgetting to keep the site up to date. This template allows the user to set the type of event (matching 2 different custom post type taxonomies) and also the number of upcoming events to show. The shortcode looked like this:
  
    [text-blocks id="event-filter" template="eventfilter" topic="sales" type="webinars" limit="1"]
  
- - text-blocks-rotatingitems.php - The client wanted an easy way to be able to add rotating slides to a page. For example, a block of testimonials or logos that rotated. To avoid adding a new plugin, I created another custom template that would turn any bulleted listed (unordered list items) into a slideshow. All the user had to do was create a text block, add a bulleted list of any kind of content (text, images, event tables) and use the shortcode like this:
+ - text-blocks-rotatingitems.php - The client wanted an easy way to be able to add rotating slides to a page. For example, testimonials or logos that rotated. To avoid adding a new plugin, I created another custom template that would turn any bulleted listed (unordered list items) into a slideshow. All the user had to do was create a text block, add a bulleted list of any kind of content (text, images, event tables) and use the shortcode like this:
  
    [text-blocks id="test-slideshow-block" template="rotatingitems"]
 
- As you can see in the php file, the custom template includes the js and css files for Unslider, a very simple slider jquery plugin and activates it on page load. The code uses a random number generator to make the element ID unique, so multiple sliders could exist on the same page without conflicting name space. There are various config settings that have default values but can be overridden, by passing more values through the shortcode, like this:
+ As you can see in the php file, the custom template includes the js and css files for Unslider, a very simple slider jquery plugin, and activates it on page load. The code uses a random number generator to make the element ID unique, so multiple sliders could exist on the same page without conflicting name space. There are various config settings that have default values but can be overridden, by passing more values through the shortcode, like this:
 
    [text-blocks id="test-slideshow-block" template="rotatingitems" autoslide="yes" shownav="no" showarrows="no" slidedelay="4000"]
