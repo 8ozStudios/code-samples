@@ -1,6 +1,6 @@
 <?php
 
-class Common_MiscController extends Model_CustomController
+class Common_ToolsController extends Model_CustomController
 {
 
     public function init()
