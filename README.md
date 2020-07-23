@@ -1,7 +1,7 @@
 # code-samples
 Some samples of code I wrote, below is a description of each folder. 
 
-<b>'BuyDontRent WP' </b><br/>
+<b>Real Estate Wordpress Site </b><br/>
 These are some files extracted from the child theme I built for a WP-based real estate website (since closed). The files are:
  - functions.php
  - styles.css - <b>*{{Main CSS file from a recent site}}*</b>
