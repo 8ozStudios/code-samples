@@ -2,7 +2,7 @@
 Some samples of code I wrote, below is a description of each folder. 
 
 <b>'BuyDontRent WP' </b><br/>
-These are some files extracted from the child theme I built for a WP-based real estate website (www.buydontrent.com). The files are:
+These are some files extracted from the child theme I built for a WP-based real estate website (since closed). The files are:
  - functions.php
  - styles.css - <b>*{{Main CSS file from a recent site}}*</b>
  - script.js
