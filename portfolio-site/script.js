@@ -103,8 +103,8 @@
   }
 
   function contactInfo(){
-    $('#email').html('<a href="mailto:hello@markpruce.com">hello@markpruce.com</a>');
-    $('#phone').html('<a href="tel:6073237376">(607) 323-7376</a>')
+    $('#email').html('<a href="mailto:hello@example.com">hello@example.com</a>');
+    $('#phone').html('<a href="tel:6071231234">(607) 323-7376</a>')
   }
 
   function setHeight(){
