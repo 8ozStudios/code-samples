@@ -1,0 +1,53 @@
+.filters-wrapper {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  padding-left: 2px;
+  @media screen and (max-width:768px){
+    padding: 10px 4% 5px;
+  }
+}
+.close-filter {
+  display:none;
+  float: right;
+  font-size: 32px;
+  margin: -6px -4px 0 0;
+}
+.browse .filter {
+  @media screen and (max-width:768px){
+    position: fixed;
+    border-right: none;
+    display: flex;
+    flex: unset;
+    background: #FFFFFF;
+    width: calc(100%-30px);
+    margin: 0 15px;
+    padding: 0;
+    box-shadow: 0 0 30px -5px;
+    left: 0;
+    top: 110%;
+    height: calc(100%-140px);
+    z-index: 10;
+    transition: top .5s;
+  }
+  &.open {
+    top:140px;
+    transition: top .5s;
+  }
+  @media screen and (max-width:768px){
+    .close-filter {
+      display:block;
+      position: absolute;
+      top: -5px;
+      right: -7px;
+    }
+    .filter-item {
+      padding-top: 6px;
+      .filter-option {
+        padding: 5px 3px;
+        .check-box {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,171 @@
+.main-content .top-content {
+  .button-wrapper {
+    text-align: right;
+    @media screen and (max-width:768px){
+      z-index: 12;
+      position:fixed;
+      bottom:0;
+      left:0;
+      width:100%;
+      background-color:#e3e3e3;
+      text-align:center;
+      padding:0 !important;
+    }
+    .toolbar {
+      @media screen and (max-width:768px){
+        display: flex;
+      }
+      .btn {
+        background-color: #475666;
+        display: inline-block;
+        color: #FFFFFF;
+        border-radius: 5px;
+        margin: 0 3px 5px;
+        padding: 8px 11px;
+        font-size: .9em;
+        cursor:pointer;
+        &.view {
+          margin-right: 0;
+          margin-left: 0;
+          border-radius: 0;
+          padding: 5px 11px;
+          &:first-child {
+            margin-left:3px;
+            border-radius: 5px 0 0 5px;
+          }
+          &:last-child {
+            margin-right:3px;
+            border-radius: 0 5px 5px 0;
+          }
+        }
+        &.inactive {
+          background-color: #808d9b;
+        }
+        &.has-link {
+          padding:0;
+          a {
+            padding: 8px 11px;
+            display:inline-block;
+          }
+        }
+        &.change-view {
+          display:none;
+          flex-direction: column;
+        }
+        @media screen and (max-width:768px){
+          display:inline;
+          flex: 1;
+          font-size: .7em;
+          text-align: center;
+          padding: 5px 0 3px;
+          margin: 0 1px 0 0;
+          border-radius: 0;
+          &:last-child {
+            margin-right:0;
+          }
+          &.change-view {
+            display:flex;
+            z-index: 2;
+          }
+        }
+        @media screen and (min-width:769px){
+          &.filter {
+            display:none;
+          }
+        }
+        a, i {
+          color:#FFFFFF;
+        }
+        i {
+          @media screen and (max-width:768px){
+             display: block;
+             font-size: 25px;
+             margin-bottom: 3px;
+           }
+        }
+      }
+      span.view-buttons-wrapper {
+        position:relative;
+        @media screen and (max-width:768px){
+          flex: 1;
+          display: flex;
+        }
+        .view-buttons {
+          display: inline;
+          z-index: 1;
+          @media screen and (max-width:768px){
+            display: none;
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            width: 99%;
+            top: 90px;//top: -201px;
+            background-color: #808d9b;
+            padding: 0;
+            border-radius: 5px 5px 0 0;
+            overflow: hidden;
+            transition:top .2s;
+            &.active {
+              top: -201px;
+              transition:top .2s;
+            }
+            &::after {
+              content: " ";
+              display: block;
+              width: 0;
+              height: 0;
+              border-left: 20px solid transparent;
+              border-right: 20px solid transparent;
+              border-bottom: 20px solid #475666;
+              margin: auto;
+              margin-top: -10px;
+              margin-bottom: -10px;
+            }
+            .btn {
+              border-radius: 0 !important;
+              margin: 0 !important;
+              padding-top:10px;
+              padding-bottom:10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.main-content .top-content .button-wrapper .toolbar>.btn,
+.main-content .top-content .button-wrapper .toolbar .btn.change-view {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  line-height: 13px;
+}
+
+.modal-window.social-share {
+  width: 30%;
+  margin: auto;
+  left: 35%;
+  @media screen and (max-width:768px){
+    width: 60%;
+    left: 20%;
+  }
+  @media screen and (max-width:550px){
+    width: 80%;
+    left: 10%;
+  }
+  .share-row{
+    &>a {
+      width: 100%;
+      text-align: center;
+      margin: 30px auto 0px;
+      font-size: 21px;
+      line-height: 21px;
+      &:hover {
+        color:#FFFFFF;
+        font-weight:bold;
+      }
+      svg {
+        float: left;
+      }
+    }
+  }
+}

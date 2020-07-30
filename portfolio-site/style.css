@@ -1,0 +1,322 @@
+/*
+@font-face {
+    font-family: 'overpassextralight';
+    src: url('font/overpass-extralight-webfont.woff2') format('woff2'),
+         url('font/overpass-extralight-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+} */
+
+@font-face {
+    font-family: 'overpassitalic';
+    src: url('font/overpass-italic-webfont.woff2') format('woff2'),
+         url('font/overpass-italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'overpassregular';
+    src: url('font/overpass-regular-webfont.woff2') format('woff2'),
+         url('font/overpass-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* @font-face {
+    font-family: 'overpasssemibold';
+    src: url('font/overpass-semibold-webfont.woff2') format('woff2'),
+         url('font/overpass-semibold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+} */
+
+html, body {
+  margin:0;
+  padding:0;
+  font-family: 'overpassregular', sans-serif;
+  width:100%;
+  height:100%;
+}
+
+body {
+  display: flex;
+  background: url(image/markpruce_ampersand_bg.svg) no-repeat center center;
+  background-size: cover;
+}
+
+/* #bg {
+  position: absolute;
+  width: 110%;
+  height: 110%;
+  top: -5%;
+  left: -5%;
+  background: url(image/markpruce_ampersand_bg.svg) no-repeat center center;
+  background-size: cover;
+  z-index: 0;
+} */
+
+#wrapper {
+  max-width: 1000px;
+  margin: 25px 2%;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 25px;
+  box-shadow: 2px 2px 18px -8px #000;
+  width: auto;
+  height: auto;
+  display: flex;
+  flex: 1;
+  flex-flow: row wrap;
+  align-self: center;
+  z-index: 1;
+}
+
+header {
+  flex: 1 100%;
+  /* font-size:1.5em; */
+  margin:0 0 20px;
+  font-weight:bold;
+}
+
+h1 {
+  margin: 0;
+  font-size: 30px;
+}
+
+h2 {
+  font-weight:normal;
+  font-style: italic;
+  font-size:20px;
+  margin:0;
+}
+
+aside {
+  flex: 1 50%;
+}
+
+footer {
+  flex: 1 100%;
+}
+
+section, aside, footer {
+  padding: 0 20px;
+}
+
+nav item {
+  padding: 0 6px;
+  text-decoration:underline;
+  color:#000;
+  cursor:pointer;
+}
+
+#arrow {
+  display:block;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 6px solid #333;
+  margin-top: 0px;
+  margin-left: 22px;
+}
+
+section#content {
+  padding: 10px 0 0;
+}
+
+section item {
+  display: none;
+}
+
+item p {
+    margin: 0 0 10px;
+}
+
+item p:last-child {
+    margin-bottom: 0;
+}
+
+item#about {
+    line-height: 27px;
+}
+
+item#experience p em {
+    font-size: 15px;
+    opacity: .8;
+}
+
+section item:first-child {
+  display: block;
+}
+
+.small {
+  font-size:.8em;
+}
+
+#contact>div {
+  padding: 7px 5px 0;
+  text-align:center;
+}
+
+#mobile-header {
+  display:none;
+}
+
+span.amp {
+  font-size: 1.2em;
+  color: #344859;
+  font-weight: bold;
+  margin: 0 2px;
+  font-style: normal;
+}
+
+#frame {
+  position:relative;
+  min-height:200px;
+  min-width:200px;
+  margin-bottom:15px;
+}
+
+#photo {
+  z-index: 2;
+  width: 200px;
+  height: 200px;
+  background:url(image/mark_pruce_thumb.png);
+  background-size:cover;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#shadow {
+  z-index: 1;
+  width: 200px;
+  height: 200px;
+  background-color: #344858;
+  border-radius: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media only screen and (min-width:1100px){
+  #wrapper {
+    margin: auto;
+  }
+}
+
+body.tablet #wrapper {
+  flex-flow: column;
+  margin: 0 2%;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+body.tablet #mobile-header {
+  display:block;
+}
+body.tablet header {
+  display:none;
+}
+body.tablet nav {
+  text-align:center;
+  border-top: dotted 1px #99999980;
+  padding-top: 10px;
+  margin-top: 10px;
+}
+body.tablet section#frame-wrapper {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+}
+body.tablet section#frame-wrapper div#frame {
+  flex: 1;
+}
+body.tablet section#frame-wrapper div#contact {
+  flex: 2;
+}
+body.tablet section#frame-wrapper div#contact>div {
+  text-align:left;
+  padding: 4px 0 0 25px;
+}
+body.tablet #email, body.tablet #phone, body.tablet #address {
+  font-size: 15px;
+}
+body.tablet #photo {
+  max-width: 150px;
+  width: 150px;
+  height: 150px;
+}
+body.tablet #shadow {
+  display:none;
+}
+body.tablet #frame {
+  position: relative;
+  min-height: 150px;
+  min-width: 150px;
+}
+
+body.mobile #wrapper {
+  display: block;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow:unset;
+  background-color: rgba(255, 255, 255, 0.8);
+  flex-flow: wrap;
+  overflow-y: scroll;
+}
+body.mobile h1 {
+  font-size: 25px;
+  margin: 0 0 2px;
+}
+body.mobile h2 {
+  font-size: 15px;
+  line-height: 18px;
+}
+body.mobile span.mobile-line-break {
+  display: block;
+}
+body.mobile nav item {
+  padding: 0 4px;
+}
+body.mobile section#frame-wrapper {
+    padding-top: 15px;
+}
+section, aside, footer {
+    padding: 0 15px;
+}
+body.mobile section#content {
+    padding-bottom: 15px;
+}
+body.mobile section#frame-wrapper div#contact>div {
+  padding-left:5px;
+}
+body.mobile section#frame-wrapper div#contact #email,
+body.mobile section#frame-wrapper div#contact #phone {
+    font-size: 13px;
+    padding-top: 3px;
+}
+body.mobile section#frame-wrapper div#contact #address {
+  display:none;
+}
+body.mobile #shadow {
+  display:none;
+}
+body.mobile #photo {
+  max-width: 80px;
+  width: 80px;
+  height: 80px;
+}
+body.mobile #frame {
+  position: relative;
+  min-height: 80px;
+  min-width: 80px;
+}
+
+@media only screen and (max-width:400px){
+  nav item {
+    font-size: 14px;
+  }
+}

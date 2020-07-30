@@ -1,0 +1,50 @@
+.profile {
+  flex: 1;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+  .profile-wrapper{
+    @media screen and (max-width:768px){
+      padding:0 3%;
+      .top-content {
+        padding:0;
+      }
+    }
+    &>div {
+      margin: 0 0 12px;
+      .label {
+        font-family:'aileronbold';
+      }
+    }
+    .program-row {
+      display:flex;
+      @media screen and (max-width:768px){
+        display:block;
+      }
+      .program-col {
+        flex:1;
+        &>div {
+          margin-bottom: 10px;
+          img {
+            max-width:100%;
+          }
+        }
+        .map-wrapper {
+          height: 270px;
+        }
+        button.directions {
+          background: #6cc36c;
+          color: #FFFFFF;
+          border: none;
+          padding: 15px 23px;
+          margin: 25px auto;
+          display: block;
+          font-size: 18px;
+          font-weight: bold;
+        }
+        &:last-child {
+          margin-left: 3%;
+        }
+      }
+    }
+  }
+}
